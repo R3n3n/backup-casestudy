@@ -1,0 +1,24 @@
+﻿Imports MySql.Data.MySqlClient
+Module DbContext
+
+    Public cn As New MySqlConnection
+    Public cmd As MySqlCommand
+    Public dr As MySqlDataReader
+    Public sql As String
+
+    Public Const ConnString As String = "server=localhost;user id=root;password=;database=registrar_db"
+
+    Public Sub connection()
+
+        cn.Close()
+        cn.ConnectionString = ConnString
+        cn.Open()
+
+        'MsgBox("Database Connected Successfully!", MsgBoxStyle.Information, "Database Connection")
+
+    End Sub
+
+    Public CurrentUserID As Integer
+    Public CurrentFullName As String
+
+End Module
